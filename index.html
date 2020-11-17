@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9" /> 
+
+    <title>Housing Department Income Map</title>
+    <link rel="icon" type="image/png" href="img/COfavicon2.png">
+    <link rel="stylesheet" href="https://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="https://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/esri/css/esri.css">
+        <link rel="stylesheet" href="css/layout.css">
+		
+	  <!-- Make sure your CSS file is listed before jQuery -->
+<link rel="stylesheet" href="css/uniform.aristo.css" media="screen" />
+		<script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery-ui.js"></script>
+<script src="js/jquery.uniform.min.js"></script>
+
+	  
+<!--[if IE]>
+<style>
+	#header{
+  border:solid 1px #999;
+  background: #E8E8E8;}
+</style>
+<![endif]-->
+
+    <link rel="stylesheet" href="css/style.css">
+	
+	<script>
+		var dojoConfig = { parseOnLoad: true };
+	</script>
+	
+<script src="https://js.arcgis.com/3.10/"></script>
+
+    <script src="js/lowmodacs.js">
+    	
+    	
+    </script>
+
+    
+  </head>
+
+  <body class="claro">
+
+  <div id="mainWindow" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline'" style="width:100%; height:100%;">
+
+      <div id="header" class="shadow roundedCorners" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
+        <div id="title"></div>
+        <div id="subtitle"></div>
+
+      </div>
+      <div id="mapDiv" class="roundedCorners shadow" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'"></div>
+
+    </div>
+	
+	<div id="demo2">
+		<span>Geography:&nbsp;</span>
+		<select id="speed2" onChange="handleClick();">
+			<option id="y1" value="1">Block Group</option>
+			<option id="y2" value="2" selected>Tract</option>
+			<option id="y3" value="3">County</option>
+			<option id="y4" value="4">Place</option>
+		</select>
+	</div>
+	  
+	
+	  
+    <div id="legendDiv" style="margin-left: 12px;"></div>	
+
+	<div id="search"></div>
+
+	<div id="latlng">
+	<form>
+                                <input id="latlngbox" type="text" placeholder="LatLng..." onkeyup="validate(this)" >
+                                <input id="focusbutton" type="button" value="Search" tabindex="1" onclick="addMarker(document.getElementById('latlngbox').value)">
+	</form>
+	</div>
+
+	<!--<div id="uniform-printbtns" class="button" onmouseover="$(this).addClass('hover');"  onmouseout="$(this).removeClass('hover');"style="-moz-user-select: none;"  onclick="javascript:Clickhereformap('uniform-printbtns');"><span id='printspan'>Print Map</span></div>-->			
+	
+	<div id='link' title="Map Information"><img height="20" width="20" onclick="closeadvancedbox();" src='img/qmark.png' /></div>
+	
+	
+	<div id="advancedbox" style="display: none;">
+
+<img id="closebtn" src="https://dola.colorado.gov/gis-php/files/projects/acsmaps/closebtn.png" onclick="closeadvancedbox();"/>
+
+<span style="font-size: 70%"><p><b>Credits:</b><br />Built with <a href="http://www.arcgis.com/features/" target="_blank">ArcGIS Online</a> and the <a href="http://developers.arcgis.com/en/javascript/" target="_blank">ESRI Javascript API</a>. User Interface by <a href="http://uniformjs.com/" target="_blank">Uniform.js</a>.  Print Service created with <a href="http://phantomjs.org/" target="_blank">Phantom.js</a>.</p></span>
+<span style="font-size: 70%"><p><b>Data:</b> <br />Low &amp; Moderate Income data provided by HUD (FY 2019) <a href="https://www.hudexchange.info/manage-a-program/acs-low-mod-summary-data-block-groups-places" target="_blank">LinkData.</a> <br /><br />
+<b>Low/Moderate Income Status may vary by Geography.</b>	
+</p></span>	
+<span style="font-size: 70%"><p>Created by: <a href="http://demography.dola.colorado.gov" target="_blank">Colorado State Demography Office</a></p></span>			
+</div>
+
+	</body>
+  
+</html>

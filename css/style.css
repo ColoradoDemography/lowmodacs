@@ -1,0 +1,232 @@
+
+
+
+#link {
+	position: absolute;
+	z-index: 30;
+	bottom: 45px;
+	right: 32px;
+	cursor: pointer;
+}
+#closebtn {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+#advancedbox {
+	position: absolute;
+	top: 200px;
+	left: 220px;
+	width: 360px;
+	border: 2px solid rgb(68,121,170);
+	background-color: #F7F9FE;
+	padding: 10px;
+	z-index: 4000;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+#uniform-printbtns {
+	position: absolute;
+	bottom: 25px;
+	left: 18px;
+	line-height: 16px;
+}
+
+.map .logo-med {
+	bottom: 5px;
+	right: 10px;
+	width: 46px;
+	height: 22px;
+}
+
+#header {
+	border: 1.5px solid #ADADAD;
+}
+
+a:link {
+	color: #4A6883;
+}
+a:active {
+	color: #4A6883;
+}
+a:visited {
+	color: #4A6883;
+}
+a:hover {
+	color: #3333FF;
+}
+
+div.button span {
+	font-family: Copse, Georgia, serif;
+}
+
+body {
+	font-family: Copse, Georgia, serif;
+}
+
+td {
+	font-family: Copse, Georgia, serif;
+	font-size: 10pt;
+	vertical-align: middle;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+table.smallfont {
+	font-family: Copse, Georgia, serif;
+	font-size: 12px;
+	color: #333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.smallfont th {
+	font-size: 12px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.smallfont td {
+	font-size: 12px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#title {
+	color: rgb(68,121,170);
+	font-family: Copse, Georgia, serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	letter-spacing: normal;
+	outline-color: rgb(143, 2, 6);
+	outline-style: none;
+	outline-width: 0px;
+	text-decoration: none;
+	text-shadow: rgb(252, 249, 238) 0px 1px 0px, rgba(0, 0, 0, 0.14902) 0px 2px 0px;
+	top: 10px;
+	position: relative;
+}
+#subtitle {
+	color: rgb(32,60,85);
+	font-family: Copse, Georgia, serif;
+	outline-color: rgb(143, 2, 6);
+	outline-style: none;
+	outline-width: 0px;
+	text-decoration: none;
+	text-shadow: rgb(252, 249, 238) 0px 1px 0px, rgba(0, 0, 0, 0.14902) 0px 2px 0px;
+		top: 10px;
+	position: relative;
+}
+
+#search {
+	position: absolute;
+	z-index: 3500;
+	top: 56px;
+	right: 29px;
+}
+
+.esriGeocoderResults{
+	z-index: 3500;
+}
+
+#demo {
+	position: absolute;
+	z-index: 3100;
+	top: 55px;
+	right: 22px;
+}
+
+#demo2 {
+	position: absolute;
+	z-index: 3100;
+	top: 18px;
+	right: 22px;
+}
+
+
+#speed{
+	width: 210px;
+}
+
+#speed2{
+	width: 210px;
+}
+
+
+
+#legendDiv path {
+	fill-opacity: 0.7 !important;
+}
+
+.esriLegendService{
+padding-bottom: 0px;
+padding-top: 0px;
+}
+
+
+#legendDiv {
+	padding-left: 10px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	padding-right: 0px;
+	position: absolute !important;
+	right: 22px;
+	top: 125px;
+	z-index: 3000;
+	width: 175px;
+	background: white;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #666666;
+	font-size: 70%;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.btnspan {
+	text-transform: none !important;
+	color: #234E70;
+}
+
+.btnspan:hover {
+	color: black;
+}
+
+#latlng {
+                width:300px;
+                margin:10px auto;
+				top: 48px;
+				right: 220px;
+				z-index: 5000;
+				position: absolute;
+}
+.search {
+                padding:8px 15px;
+                background:rgba(50, 50, 50, 0.2);
+                border:0px solid #dbdbdb;
+}
+.button {
+                position:relative;
+                padding:6px 15px;
+                left:-8px;
+                border:2px solid #207cca;
+                background-color:#207cca;
+                color:#fafafa;
+}
+.button:hover  {
+                background-color:#fafafa;
+                color:#207cca;
+}

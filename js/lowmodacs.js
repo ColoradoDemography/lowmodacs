@@ -66,7 +66,7 @@ function init() {
 	dojo.connect(map, "onLoad", initOperationalLayer);
 
 	dojo.byId("title").innerHTML = "Low-Mod Webmap";
-	dojo.byId("subtitle").innerHTML = "Data:&nbsp;&nbsp;HUD (ACS 2011-2015)";
+	dojo.byId("subtitle").innerHTML = "Data:&nbsp;&nbsp;HUD (ACS 2016-2020). For more information: " + '<a href="https://www.hudexchange.info/programs/acs-low-mod-summary-data/">HUD Low and Moderate Income Summary Data</a>';
 
 	addbasemap("TerrainMap");
 }
@@ -96,10 +96,10 @@ function getTextContent(graphic) {
 
 	var newradio2 = $('#speed2').val();
 
-	if (newradio2 === '1') { tcontent = graphicAttributes.NAMELSAD10+", "+graphicAttributes.tractname+'<br />'+graphicAttributes.countyname+'<table><tr><td></td><td></td></tr><tr><td>Low & Moderate Income:&nbsp;&nbsp;</td><td>'+commafy(graphicAttributes.lowmod)+'</td></tr><tr><td>Population Sample:</td><td>'+commafy(graphicAttributes.lowmoduniv)+'</td></tr><tr><td>Percent:</td><td><b>'+((graphicAttributes.lowmod_pct)*100).toFixed(0)+'%</b></td></tr></table>'; }
-	if (newradio2 === '2') { tcontent = graphicAttributes.NAMELSAD10+'<br />'+getCounty(graphicAttributes.county)+'<table><tr><td></td><td></td></tr><tr><td>Low & Moderate Income:&nbsp;&nbsp;</td><td>'+commafy(graphicAttributes.lowmod)+'</td></tr><tr><td>Population Sample:</td><td>'+commafy(graphicAttributes.lowmoduniv)+'</td></tr><tr><td>Percent:</td><td><b>'+((graphicAttributes.lowmod_pct)*100).toFixed(0)+'%</b></td></tr></table>'; }	
-	if (newradio2 === '3') { tcontent = graphicAttributes.NAMELSAD10+'<br /><table><tr><td></td><td></td></tr><tr><td>Low & Moderate Income:&nbsp;&nbsp;</td><td>'+commafy(graphicAttributes.lowmod)+'</td></tr><tr><td>Population Sample:</td><td>'+commafy(graphicAttributes.lowmoduniv)+'</td></tr><tr><td>Percent:</td><td><b>'+((graphicAttributes.lowmod_pct)*100).toFixed(0)+'%</b></td></tr></table>'; }
-	if (newradio2 === '4') { tcontent = graphicAttributes.NAMELSAD10+'<br /><table><tr><td></td><td></td></tr><tr><td>Low & Moderate Income:&nbsp;&nbsp;</td><td>'+commafy(graphicAttributes.lowmod)+'</td></tr><tr><td>Population Sample:</td><td>'+commafy(graphicAttributes.lowmoduniv)+'</td></tr><tr><td>Percent:</td><td><b>'+((graphicAttributes.lowmod_pct)*100).toFixed(0)+'%</b></td></tr></table>'; } 
+	if (newradio2 === '1') { tcontent = graphicAttributes.GEONAME+'<table><tr><td></td><td></td></tr><tr><td>Low & Moderate Income:&nbsp;&nbsp;</td><td>'+commafy(graphicAttributes.lowmod)+'</td></tr><tr><td>Population Sample:</td><td>'+commafy(graphicAttributes.lowmoduniv)+'</td></tr><tr><td>Percent:</td><td><b>'+(graphicAttributes.lowmodpct).toFixed(0)+'%</b></td></tr></table>'; }
+	if (newradio2 === '2') { tcontent = graphicAttributes.tractname+'<br />'+graphicAttributes.countyname+'<table><tr><td></td><td></td></tr><tr><td>Low & Moderate Income:&nbsp;&nbsp;</td><td>'+commafy(graphicAttributes.lowmod)+'</td></tr><tr><td>Population Sample:</td><td>'+commafy(graphicAttributes.lowmoduniv)+'</td></tr><tr><td>Percent:</td><td><b>'+(graphicAttributes.lowmodpct).toFixed(0)+'%</b></td></tr></table>'; }	
+	if (newradio2 === '3') { tcontent = graphicAttributes.NAMELSAD20+'<br /><table><tr><td></td><td></td></tr><tr><td>Low & Moderate Income:&nbsp;&nbsp;</td><td>'+commafy(graphicAttributes.lowmod)+'</td></tr><tr><td>Population Sample:</td><td>'+commafy(graphicAttributes.lowmoduniv)+'</td></tr><tr><td>Percent:</td><td><b>'+(graphicAttributes.lowmodpct).toFixed(0)+'%</b></td></tr></table>'; }
+	if (newradio2 === '4') { tcontent = graphicAttributes.NAMELSAD20+'<br /><table><tr><td></td><td></td></tr><tr><td>Low & Moderate Income:&nbsp;&nbsp;</td><td>'+commafy(graphicAttributes.lowmod)+'</td></tr><tr><td>Population Sample:</td><td>'+commafy(graphicAttributes.lowmoduniv)+'</td></tr><tr><td>Percent:</td><td><b>'+(graphicAttributes.lowmodpct).toFixed(0)+'%</b></td></tr></table>'; } 
 
 	return tcontent;
 }
@@ -214,25 +214,25 @@ function initOperationalLayer(map) {
 
 	
 	
-	lowmodtr = new FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/lm_tr2/FeatureServer/0", {
+	lowmodtr = new FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/lm_tr_1620/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate
 	});
 	
-	lowmodbg = new FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/lm_bg3/FeatureServer/0", {
+	lowmodbg = new FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/lm_bg_1620/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate
 	});
 	
-	lowmodcounty = new FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/lm_cnty/FeatureServer/0", {
+	lowmodcounty = new FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/lm_cnty_1620/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate
 	});
 	
-	lowmodplace = new FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/lm_pl/FeatureServer/0", {
+	lowmodplace = new FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/lm_pl_1620/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND,
 		outFields : ["*"],
 		infoTemplate : infoTemplate
@@ -242,7 +242,7 @@ function initOperationalLayer(map) {
 	
 	
 
-	var countyLayer = new FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/County_C2010v3/FeatureServer/0", {
+	var countyLayer = new FeatureLayer("https://services.arcgis.com/IamIM3RJ5xHykalK/arcgis/rest/services/lm_cnty_1620/FeatureServer/0", {
 		mode : esri.layers.FeatureLayer.MODE_ONDEMAND
 	});
 
